@@ -1,0 +1,1 @@
+{"fixture": "32 digits, same training/validation samples, demonstration only", "logits_shape": [2, 10], "history": {"train_loss": [2.308488368988037], "val_loss": [2.29546058177948], "train_acc": [0.09375], "val_acc": [0.09375]}}
