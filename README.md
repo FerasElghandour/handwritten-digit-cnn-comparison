@@ -87,3 +87,7 @@ python scripts/validate_source.py
 ## Limitations
 
 This is one small, single-seed 8×8-image benchmark. A more complex architecture improving this test score does not establish superiority on other datasets or larger images.
+
+## Reuse
+
+Original reproduction and validation tooling is available under MIT; see [LICENSING.md](LICENSING.md) for the explicit file scope and preserved upstream, dataset and checkpoint terms.

@@ -2,7 +2,7 @@
   "repository": "handwritten-digit-cnn-comparison",
   "profiles": {
     "checks": {
-      "scope": "Source parsing only; not model training or behavior verification",
+      "scope": "Offline source and generated-data training, checkpoint selection and inference reload checks; not a real-data benchmark",
       "commands": [
         [
           "{python}",
@@ -15,7 +15,7 @@
       ]
     },
     "train": {
-      "scope": "New reference training protocol on supplied fixed splits; validation-selected checkpoint and held-out metrics",
+      "scope": "Configurable training on supplied fixed splits; default budget differs from named published reference protocols",
       "required_inputs": [
         "data",
         "config"
@@ -30,6 +30,122 @@
           "{input:config}",
           "--output",
           "{output}/training"
+        ]
+      ]
+    },
+    "reference-training": {
+      "scope": "Exact published fresh-training budgets on identically prepared splits; CPU reference; checkpoint selection uses validation only",
+      "required_inputs": [
+        "data"
+      ],
+      "commands": [
+        [
+          "{python}",
+          "train.py",
+          "--data",
+          "{input:data}",
+          "--config",
+          "baseline-config.json",
+          "--epochs",
+          "30",
+          "--batch-size",
+          "32",
+          "--seed",
+          "42",
+          "--device",
+          "cpu",
+          "--output",
+          "{output}/baseline-42"
+        ],
+        [
+          "{python}",
+          "train.py",
+          "--data",
+          "{input:data}",
+          "--config",
+          "baseline-config.json",
+          "--epochs",
+          "30",
+          "--batch-size",
+          "32",
+          "--seed",
+          "43",
+          "--device",
+          "cpu",
+          "--output",
+          "{output}/baseline-43"
+        ],
+        [
+          "{python}",
+          "train.py",
+          "--data",
+          "{input:data}",
+          "--config",
+          "baseline-config.json",
+          "--epochs",
+          "30",
+          "--batch-size",
+          "32",
+          "--seed",
+          "44",
+          "--device",
+          "cpu",
+          "--output",
+          "{output}/baseline-44"
+        ],
+        [
+          "{python}",
+          "train.py",
+          "--data",
+          "{input:data}",
+          "--config",
+          "deep-config.json",
+          "--epochs",
+          "30",
+          "--batch-size",
+          "32",
+          "--seed",
+          "42",
+          "--device",
+          "cpu",
+          "--output",
+          "{output}/deep-42"
+        ],
+        [
+          "{python}",
+          "train.py",
+          "--data",
+          "{input:data}",
+          "--config",
+          "deep-config.json",
+          "--epochs",
+          "30",
+          "--batch-size",
+          "32",
+          "--seed",
+          "43",
+          "--device",
+          "cpu",
+          "--output",
+          "{output}/deep-43"
+        ],
+        [
+          "{python}",
+          "train.py",
+          "--data",
+          "{input:data}",
+          "--config",
+          "deep-config.json",
+          "--epochs",
+          "30",
+          "--batch-size",
+          "32",
+          "--seed",
+          "44",
+          "--device",
+          "cpu",
+          "--output",
+          "{output}/deep-44"
         ]
       ]
     }
