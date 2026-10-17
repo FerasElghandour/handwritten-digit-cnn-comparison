@@ -1,0 +1,18 @@
+{
+  "epochs": 30,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "optimizer": "AdamW; library defaults other than lr",
+  "gradient_clip_norm": 5,
+  "selection": "minimum validation cross-entropy/BCE",
+  "seed": 42,
+  "precision": "float32",
+  "device": "CPU",
+  "torch_threads": 2,
+  "deterministic_algorithms": true,
+  "additional_training_seeds": [
+    43,
+    44
+  ],
+  "runtime_record": "training-environment.json"
+}

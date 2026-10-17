@@ -8,6 +8,15 @@ Stratified training/validation/test splits, normalization, shallow versus BatchN
 
 ![Implementation mechanism: Digit image and label batches → Baseline or deeper CNN → Cross-entropy and optimizer update → Validation-loss checkpoint selection → Compare recorded curves under one budget](assets/mechanism.svg)
 
+
+
+## Train both CNNs
+
+The real 1,797-image digits comparison now trains both architectures for 30 epochs across three training seeds. On the fixed 360-image test split, baseline mean accuracy is **97.50%** and deep CNN mean accuracy is **98.89%**. Checkpoints are selected using validation loss, then tested once.
+
+[Commands, artifacts and benchmark scope](BENCHMARKS.md) · [Versioned profiles](reproduction.json)
+
+
 ## Try a small example
 
 A 32-image fixture runs one training epoch through the notebook definitions. The same tiny batch is used for training and validation to exercise the interface; its accuracy is not an evaluation result.
