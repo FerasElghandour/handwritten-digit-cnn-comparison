@@ -1,0 +1,24 @@
+{
+  "slug": "handwritten-digit-cnn-comparison",
+  "date": "2026-10-17",
+  "notebook_sha256": "e9ea51a4bfc60b337dd70d01cf690b587034fa3483cd758d38127a066154d99c",
+  "code_cells": 13,
+  "numpy": "2.5.4",
+  "pandas": "3.0.6",
+  "torch": "2.14.1",
+  "sklearn": "1.9.1",
+  "inputs": {},
+  "metrics": {
+    "acc_a": 0.9777777777777777,
+    "acc_b": 0.9916666666666667,
+    "f1_a": 0.9776507079003702,
+    "f1_b": 0.9915223880597015
+  },
+  "plots": [
+    "figure-01.png",
+    "figure-02.png",
+    "figure-03.png",
+    "figure-04.png"
+  ],
+  "status": "passed"
+}
